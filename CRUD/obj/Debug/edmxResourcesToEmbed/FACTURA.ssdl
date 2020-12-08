@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Empresa1Model1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'Empresa1.dbo.TblCliente' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="TblCliente">
+          <Property Name="ID Cliente" Type="int" />
+          <Property Name="Nombre Cliente" Type="nvarchar" MaxLength="50" />
+          <Property Name="Direccion" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pais" Type="nchar" MaxLength="10" />
+          <Property Name="FechaPedido" Type="date" />
+          <Property Name="Cupo" Type="money" />
+        </EntityType>-->
+  <EntityType Name="TblFactura">
+    <Key>
+      <PropertyRef Name="ID Factura" />
+    </Key>
+    <Property Name="ID Factura" Type="int" Nullable="false" />
+    <Property Name="ID Producto" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Nombre Producto" Type="nchar" MaxLength="10" />
+    <Property Name="Precio Unidad" Type="money" />
+    <Property Name="Cantidad" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Subtotal" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Saldo" Type="numeric" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityContainer Name="Empresa1Model1StoreContainer">
+    <EntitySet Name="TblFactura" EntityType="Self.TblFactura" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

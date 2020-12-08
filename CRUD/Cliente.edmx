@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Empresa1Model1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Empresa1.dbo.TblCliente' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="TblCliente">
+          <Key>
+            <PropertyRef Name="Cupo" />
+          </Key>
+          <Property Name="ID Cliente" Type="int" />
+          <Property Name="Nombre Cliente" Type="nvarchar" MaxLength="50" />
+          <Property Name="Direccion" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pais" Type="nchar" MaxLength="10" />
+          <Property Name="FechaPedido" Type="date" />
+          <Property Name="Cupo" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Empresa1Model1StoreContainer">
+          <EntitySet Name="TblCliente" EntityType="Self.TblCliente" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TblCliente].[ID Cliente] AS [ID Cliente], 
+    [TblCliente].[Nombre Cliente] AS [Nombre Cliente], 
+    [TblCliente].[Direccion] AS [Direccion], 
+    [TblCliente].[Pais] AS [Pais], 
+    [TblCliente].[FechaPedido] AS [FechaPedido], 
+    [TblCliente].[Cupo] AS [Cupo]
+    FROM [dbo].[TblCliente] AS [TblCliente]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Empresa1Model1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TblCliente">
+          <Key>
+            <PropertyRef Name="Cupo" />
+          </Key>
+          <Property Name="ID_Cliente" Type="Int32" />
+          <Property Name="Nombre_Cliente" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pais" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="FechaPedido" Type="DateTime" Precision="0" />
+          <Property Name="Cupo" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Empresa1Entities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TblCliente" EntityType="Self.TblCliente" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Empresa1Model1StoreContainer" CdmEntityContainer="Empresa1Entities2">
+          <EntitySetMapping Name="TblCliente">
+            <EntityTypeMapping TypeName="Empresa1Model1.TblCliente">
+              <MappingFragment StoreEntitySet="TblCliente">
+                <ScalarProperty Name="ID_Cliente" ColumnName="ID Cliente" />
+                <ScalarProperty Name="Nombre_Cliente" ColumnName="Nombre Cliente" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Pais" ColumnName="Pais" />
+                <ScalarProperty Name="FechaPedido" ColumnName="FechaPedido" />
+                <ScalarProperty Name="Cupo" ColumnName="Cupo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

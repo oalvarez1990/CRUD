@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Empresa1Model1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Empresa1.dbo.TblCliente' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="TblCliente">
+    <Key>
+      <PropertyRef Name="Cupo" />
+    </Key>
+    <Property Name="ID Cliente" Type="int" />
+    <Property Name="Nombre Cliente" Type="nvarchar" MaxLength="50" />
+    <Property Name="Direccion" Type="nvarchar" MaxLength="50" />
+    <Property Name="Pais" Type="nchar" MaxLength="10" />
+    <Property Name="FechaPedido" Type="date" />
+    <Property Name="Cupo" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="Empresa1Model1StoreContainer">
+    <EntitySet Name="TblCliente" EntityType="Self.TblCliente" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TblCliente].[ID Cliente] AS [ID Cliente], 
+    [TblCliente].[Nombre Cliente] AS [Nombre Cliente], 
+    [TblCliente].[Direccion] AS [Direccion], 
+    [TblCliente].[Pais] AS [Pais], 
+    [TblCliente].[FechaPedido] AS [FechaPedido], 
+    [TblCliente].[Cupo] AS [Cupo]
+    FROM [dbo].[TblCliente] AS [TblCliente]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

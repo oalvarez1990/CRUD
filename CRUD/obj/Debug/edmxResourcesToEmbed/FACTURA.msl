@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Empresa1Model1StoreContainer" CdmEntityContainer="Empresa1Entities1">
+    <EntitySetMapping Name="TblFactura">
+      <EntityTypeMapping TypeName="Empresa1Model1.TblFactura">
+        <MappingFragment StoreEntitySet="TblFactura">
+          <ScalarProperty Name="ID_Factura" ColumnName="ID Factura" />
+          <ScalarProperty Name="ID_Producto" ColumnName="ID Producto" />
+          <ScalarProperty Name="Nombre_Producto" ColumnName="Nombre Producto" />
+          <ScalarProperty Name="Precio_Unidad" ColumnName="Precio Unidad" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Subtotal" ColumnName="Subtotal" />
+          <ScalarProperty Name="Saldo" ColumnName="Saldo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
